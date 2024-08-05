@@ -290,8 +290,8 @@ const Sidebar = () => {
       </div>
       {/* Main Content */}
 
-      <div className={`flex-grow bg-gray-100   ${isOpen ? 'ml-64' : 'ml-0'} transition-margin duration-300 ease-in-out`}>
-        <div  className='h-[56px] border-b-2  py-2 flex flex-row item-center justify-start  gap-10 '>
+      <div className={`flex-grow bg-white   ${isOpen ? 'ml-64' : 'ml-0'} transition-margin duration-300 ease-in-out`}>
+        <div  className='h-[56px] border-b  py-2 flex flex-row item-center justify-start  gap-10 '>
             <div  className= " relative  flex flex-row justify-between items-center md:pl-10 w-full">
 
            
