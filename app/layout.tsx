@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import QueryProvider from "./providers/QueryProvider";
+import RecoilContextProvider from "./providers/RecoilProvider";
+import  { Toaster } from 'react-hot-toast';
+import 'react-material-symbols/rounded'; 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+     <body className={"font-indivisible h-screen antialiased"}> 
+      <QueryProvider>
+        <RecoilContextProvider>
+          {children}
+        </RecoilContextProvider>
+        </QueryProvider>
+        <Toaster />
+        </body>
     </html>
   );
 }
