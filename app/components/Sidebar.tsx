@@ -256,7 +256,7 @@ const Sidebar = () => {
                   className={`relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 pl-2 pr-6 ${activeMenu === menuItem.name && !activeSubMenu ? 'border-indigo-500 bg-gray-50 text-gray-800' : 'border-transparent'}`}
                 >
                   <span className="inline-flex justify-center items-center ml-4">
-                    <MaterialSymbol icon={menuItem.icon}  fill size={20} />
+                    <MaterialSymbol icon={menuItem.icon as any}  fill size={20} />
                   </span>
                   <span className="ml-2  text-base tracking-wide truncate">{menuItem.name}</span>
                   {menuItem.subMenus && (
@@ -275,7 +275,7 @@ const Sidebar = () => {
                           className={`relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 pr-6 ${activeSubMenu === subMenuItem.name ? 'border-indigo-500 bg-gray-50 text-gray-800' : 'border-transparent'}`}
                         >
                           <span className="inline-flex justify-center items-center ml-4">
-                            <MaterialSymbol icon={subMenuItem.icon} fill size={20} />
+                            <MaterialSymbol icon={subMenuItem.icon as any} fill size={20} />
                           </span>
                           <span className="ml-2 text-base tracking-wide truncate">{subMenuItem.name}</span>
                         </a>
