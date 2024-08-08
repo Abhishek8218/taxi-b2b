@@ -6,6 +6,7 @@ import SubMenu1 from './MainMenu/InboxContent/SubMenu1';
 import SubMenu2 from './MainMenu/InboxContent/SubMenu2';
 import InboxContent from './MainMenu/InboxContent/InboxContent';
 import Link from 'next/link';
+import Bookings from './MainMenu/Bookings/bookings';
 
 const useUserAgent = () => {
   const [userAgent, setUserAgent] = useState('');
@@ -85,6 +86,8 @@ const Sidebar = () => {
   const getContentComponent = () => {
     const activePath = activeMenu;
     switch (activePath[activePath.length - 1]) {
+      case 'Bookings':
+        return <Bookings/>
       case 'Sub Inbox 1':
         return <SubMenu1 />;
       case 'Sub Inbox 2':
@@ -162,9 +165,9 @@ console.log(activeMenu[activeMenu.length - 1])
       {/* Sidebar and Content */}
       <div className={`flex-grow flex flex-row bg-white ${isOpen && !isMobile ? 'xl:ml-32' : 'xl:ml-[-5rem]'} xl:mr-32 transition-all duration-500 ease-in-out`}>
         {isOpen && isMobile && (
-          <div className="fixed inset-0 bg-gray-50  bg-opacity-50 z-40" onClick={toggleSidebar}></div>
+          <div className="fixed inset-0 bg-white  bg-opacity-50 z-40" onClick={toggleSidebar}></div>
         )}
-        <div className={`${isMobile ? "fixed h-full": ""} flex flex-col top-[3.25rem] left-0 w-64 bg-gray-50 h-100vh transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-50`}>
+        <div className={`${isMobile ? "fixed h-full": ""} flex flex-col top-[3.25rem] left-0 w-64 bg-gray-50  mr-2 rounded-lg h-100vh transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-50`}>
           {/* <div className="flex items-center justify-between px-6 h-14 ">
             <div className='font-semibold text-black text-xl border-b-2 border-indigo-500'>{lastMenu}</div>
             <MaterialSymbol icon="close" fill size={28} color="gray" className="ml-2 cursor-pointer rounded-lg hover:bg-gray-200" onClick={toggleSidebar} />

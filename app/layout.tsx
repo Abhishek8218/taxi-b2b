@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     <body className={"font-indivisible h-screen antialiased"}> 
+     <body className={"font-indivisible h-screen antialiased  select-none"}> 
       <QueryProvider>
         <RecoilContextProvider>
           <Header/>

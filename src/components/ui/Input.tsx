@@ -3,6 +3,7 @@ import React, { forwardRef } from 'react';
 
 
 interface InputProps{
+  name?: string;
     type?: string;
     placeholder?: string;
     value?: string;
@@ -11,9 +12,10 @@ interface InputProps{
   }
 
 // Define the Input component
-const Input = forwardRef(({ type = 'text', placeholder, value, onChange, className, ...props }:InputProps, ref:any) => {
+const Input = forwardRef(({name, type = 'text', placeholder, value, onChange, className, ...props }:InputProps, ref:any) => {
   return (
     <input
+    name={name}
       type={type}
       placeholder={placeholder}
       value={value} 
